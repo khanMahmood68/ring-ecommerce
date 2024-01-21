@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ring-ecommerce/static/css/main.c2b46def.css",
+    "main.js": "/ring-ecommerce/static/js/main.e9569e5a.js",
+    "index.html": "/ring-ecommerce/index.html",
+    "main.c2b46def.css.map": "/ring-ecommerce/static/css/main.c2b46def.css.map",
+    "main.e9569e5a.js.map": "/ring-ecommerce/static/js/main.e9569e5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2b46def.css",
+    "static/js/main.e9569e5a.js"
+  ]
+}
