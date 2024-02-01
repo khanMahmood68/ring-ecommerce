@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Styles from "../Styles/productDetailsCard.module.css";
+import { useShoppingCart } from "../Context/ShopingCartContext";
 
 function ProductDetailsCard({ product }) {
-  const { title, image, category, description, price } = product[0];
+  const { title, image, category, description, price, id } = product[0];
+
+  const { increaseCartQuntity } = useShoppingCart();
 
   const [zoomLevel, setZoomLevel] = useState(1);
 
@@ -20,7 +23,7 @@ function ProductDetailsCard({ product }) {
   console.log("Product Details card", product[0]);
   return (
     <div className={Styles.productDetailsContainer}>
-      <div  className={Styles.zoomableImageContainer}>
+      <div className={Styles.zoomableImageContainer}>
         <img
           className={Styles.zoomableImage}
           style={{ transform: `scale(${zoomLevel})` }}
@@ -33,13 +36,18 @@ function ProductDetailsCard({ product }) {
         </div>
       </div>
       <div className={Styles.productInfo}>
-        <h1 style={{textAlign:'start'}}>{title}</h1>
-        <h3 className={Styles.productCategory}>{category}</h3>
+        <h1 className={Styles.h1} style={{ textAlign: "start" }}>{title}</h1>
+        <h3  className={Styles.productCategory}>{category}</h3>
         <p className={Styles.productDescription}>{description}</p>
         <p className={Styles.productPrice}>${price}</p>
-        <Link to="/shop" className={Styles.backToShop}>
-          Back to Shop
-        </Link>
+        <button
+          className={Styles.backToShop}
+          onClick={() => {
+            increaseCartQuntity({title, image, category, description, price, id });
+          }}
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );

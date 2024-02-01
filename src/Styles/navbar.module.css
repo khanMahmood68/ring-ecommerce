@@ -1,44 +1,83 @@
+/* navbar.module.css */
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  header {
-    background-color: #333;
-    padding: 15px 0;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  nav {
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    gap: 50px;
-    margin:10px;
-  }
-  
-  .link{
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #333;
+  padding: 15px 20px; /* Adjust padding for better spacing */
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between links */
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #ffcc00;
+}
+
+.logo img {
+  max-width: 60px;
+  height: 60px;
+  margin-left: auto;
+  border-radius: 15px;
+}
+
+.cartTotalItems{
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  background-color: yellow;
+  color: #000;
+  border-radius: 50%;
+  display: grid;
+  place-items:center;
+  top: -20%;
+  left: 70%;
+}
+
+.cartTrolleyLink{
+  position: relative;
+  margin: 0 15px;
+}
+.cartTrolley{
+    position: relative;
+    font-size: 3.2rem;
     text-decoration: none;
     color: white;
-    font-size: 18px;
     margin: 0 15px;
     transition: color 0.3s;
-  }
-  
-  .link:hover {
-    color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px; /* Adjust the gap for mobile view */
   }
 
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .link {
-      margin: 10px 0;
-    }
+  .link {
+    margin: 10px 0;
   }
+}
+
   

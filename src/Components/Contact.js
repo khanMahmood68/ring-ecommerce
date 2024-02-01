@@ -21,7 +21,7 @@ const Contact = () => {
     // Add your logic to handle the form submission (e.g., send an email)
     console.log("Form submitted:", formData);
     // You can also reset the form data here
-    // setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -57,7 +57,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </label>
-            <button type="submit">Submit</button>
+            <button className={Styles.button} type="submit">Submit</button>
           </form>
         </div>
         <div className={Styles.contactDetails}>
